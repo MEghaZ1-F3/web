@@ -342,3 +342,51 @@ body {
         justify-content: center;
     }
 }
+/* Cinematic Preloader Screen */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #121110; /* Dark Luxury Backdrop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    transition: transform 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.preloader-center {
+    text-align: center;
+}
+
+.preloader-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(5rem, 12vw, 8.5rem);
+    font-weight: 600;
+    color: #faf7f2;
+    line-height: 0.9;
+    letter-spacing: -2px;
+}
+
+.preloader-line {
+    width: 40px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.25);
+    margin: 1.4rem auto 1rem;
+}
+
+.preloader-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #827b73;
+    text-transform: uppercase;
+}
+
+/* Curtain Slide Up Animation */
+.preloader.hide {
+    transform: translateY(-100%);
+    pointer-events: none;
+}
