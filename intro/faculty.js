@@ -22,19 +22,20 @@ const facultyData = [
         work: "WORK: ASST. PROF GEC AMBIKAPUR",
         email: "jasmine5feb@gmail.com",
         phone: "+91 9039680638",
-        photo: "../images/minj.jpg" //  photo ho 
+        photo: "../images/jasmin minj.jpg" //  photo ho 
     },
     {
         name: "Dr.Mohan Rao Mamdikar",
         tagline: "ASSISTANT PROFESSOR (CSE)",
         bio: "Assistant Professor in the Department of Computer Science & Engineering. Specialized in Software Engineering, Reliability analysis of computer based system.",
-        exp: "EXPERIENCE: 11+ YEARS",
-        mtech: "M.TECH: ",
-        btech: "B.E.: ",
+        exp: "EXPERIENCE: 14+ YEARS",
+         qual: "PH.D.: COMPLETED (2023)",
+        mtech: "M.TECH:2013 ",
+        btech: "B.E.:2006 ",
         work: "WORK: ASST. PROF GEC AMBIKAPUR",
         email: "",
         phone: "+91 8085788670",
-        photo: "../images/Rao.jpg"
+        photo: "../images/mohan rao.jpg"
     },
     {
         name: "Assi.Prof. Pooja Patre",
@@ -46,7 +47,7 @@ const facultyData = [
         work: "WORK: ASST. PROF GEC AMBIKAPUR",
         email: "",
         phone: "+91 9560654445",
-        photo: "../images/Daynne.jpg"
+        photo: "../images/pooja patre.jpg"
     }
 ];
 

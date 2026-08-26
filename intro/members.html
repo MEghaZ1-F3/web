@@ -3,69 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editorial Team Profiles | Web Tech Lab</title>
-    <!-- Google Aesthetic Fonts -->
+    <title>Team Profiles | Web Tech Lab</title>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="members.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="members.css">
 </head>
 <body>
 
     <!-- Header -->
-    <header class="top-banner">
-        <h1 class="main-editorial-title" id="display-name">Amjad Khan</h1>
-        <p class="sub-tagline">Department of Computer Science & Engineering • 7th Sem</p>
+    <header class="header">
+        <h1 id="memberName" class="title">Amjad Khan</h1>
+        <p class="subtitle">Department of Computer Science & Engineering • 7th Sem</p>
     </header>
 
-    <!-- Member Selection Navigation -->
-    <nav class="member-tabs">
-        <button class="tab-btn active" onclick="switchMember('amjad')">Amjad Khan</button>
-        <button class="tab-btn" onclick="switchMember('neelam_t')">Neelam Thakur</button>
-        <button class="tab-btn" onclick="switchMember('ayush')">Ayush Kaushik</button>
-        <button class="tab-btn" onclick="switchMember('neelam_k')">Neelam Korram</button>
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <button class="tab active" data-id="amjad">Amjad Khan</button>
+        <button class="tab" data-id="neelam_t">Neelam Thakur</button>
+        <button class="tab" data-id="ayush">Ayush Kaushik</button>
+        <button class="tab" data-id="neelam_k">Neelam Korram</button>
     </nav>
 
-    <!-- Main Editorial Showcase -->
-    <main class="editorial-container">
+    <!-- Main Showcase -->
+    <main class="showcase">
         
-        <!-- Left Pane: Layered Photos -->
-        <div class="image-composition">
-            <div class="bg-backdrop-box"></div>
-            <!-- Background aesthetic architectural photo -->
-            <img class="bg-arch-photo" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Aesthetic Background">
-            <!-- Front Member Portrait (Replace src with your local image) -->
-           <img class="front-portrait-photo" id="member-photo" src="../images/Amjad.jpeg" alt="Member Portrait">
+        <!-- Left Side: Image Layering -->
+        <div class="visual-stack">
+            <div class="accent-box"></div>
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Interior Mood" class="img-back">
+            <img id="memberPhoto" src="../images/Amjad.jpeg" alt="Amjad Khan Portrait" class="img-front">
         </div>
 
-        <!-- Right Pane: Bio & Details -->
-        <div class="member-info-pane">
-            <span class="member-role" id="member-role">Lead Developer & Full-Stack Architect</span>
-            <h2 class="member-quote" id="member-quote">Designing digital interfaces with precision and clean architecture.</h2>
-            <p class="member-bio" id="member-bio">
-                Contributed to the core implementation of the Web Technology Laboratory portal, focusing on modular architecture, responsive UI components, and integrating interactive experiments.
+        <!-- Right Side: Details -->
+        <section class="info-pane">
+            <span id="memberRole" class="role-tag">Full Stack Developer, Data Analytics, AI & ML and DS.</span>
+            <h2 id="memberQuote" class="quote">Turning complex data into intelligent, scalable web solutions.</h2>
+            <p id="memberBio" class="bio">
+                A versatile engineer bridging the gap between robust web development and intelligent systems. I specialize in building full-stack applications, extracting data-driven insights, and deploying predictive machine learning models to solve real-world problems.
             </p>
 
-            <div class="academic-pills">
-                <span class="pill" id="pill-branch">BRANCH: CSE</span>
-                <span class="pill" id="pill-sem">SEMESTER: 7TH</span>
-                <span class="pill" id="pill-role">ROLE: CORE LOGIC & DB</span>
+            <div class="badges">
+                <span class="badge">Branch: CSE</span>
+                <span class="badge">Semester: 7th</span>
+                <span id="memberSpecialty" class="badge">AI, ML & Full Stack</span>
             </div>
 
-            <a href="../1_to_10_experiment.html" class="btn-peach">Explore Lab Experiments</a>
-        </div>
+            <a href="../experiment-viewer.html" class="btn-primary">Explore Lab Experiments</a>
+        </section>
 
     </main>
 
-   
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="../index.html" class="link-back">← Return to Portal Home</a>
+    </footer>
 
-    <!-- Back link -->
-    <div class="bottom-actions">
-        <a href="../index.html" class="btn-back-home">← Return to Portal Home</a>
-    </div>
-
-    <!-- Switch Logic -->
-   <script src=members.js></script>"</script>
+    <script src="members.js"></script>
 </body>
 </html>

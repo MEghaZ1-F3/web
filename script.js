@@ -1,19 +1,31 @@
-function updateDateTime() {
+/**
+ * Live Clock for Top Status Bar
+ */
+function updateClock() {
+    const clockElement = document.getElementById("liveClock");
+    if (!clockElement) return;
+
     const now = new Date();
-    
-    // Format: Mon Aug 17 2026
-    const dateOptions = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
-    const dateString = now.toLocaleDateString('en-US', dateOptions);
-    
-    // Format: 11:31:05 AM
-    const timeString = now.toLocaleTimeString('en-US', { hour12: true });
-    
-    const datetimeElement = document.getElementById("datetime");
-    if (datetimeElement) {
-        datetimeElement.innerHTML = `📅 ${dateString} &nbsp;|&nbsp; 🕒 ${timeString}`;
-    }
+
+    const date = now.toLocaleDateString("en-US", {
+        weekday: "short",
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+    });
+
+    const time = now.toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+    });
+
+    clockElement.textContent = `${date} | ${time}`;
 }
 
-// Update clock every second
-setInterval(updateDateTime, 1000);
-updateDateTime();
+// Initialize on DOM ready
+document.addEventListener("DOMContentLoaded", () => {
+    updateClock();
+    setInterval(updateClock, 1000);
+});

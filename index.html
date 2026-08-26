@@ -4,500 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internet & Web Technology Lab | GEC Ambikapur</title>
-    <!-- Google Aesthetic Serif & Sans Fonts -->
+
+    <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-color: #faf7f2;
-            --surface: #ffffff;
-            --text-dark: #23201d;
-            --text-muted: #827b73;
-            --accent-terracotta: #d88c78;
-            --accent-terracotta-hover: #c47662;
-            --accent-sage: #3a5a40;
-            --border-line: #ece6dc;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Top Minimal Editorial Navbar */
-        .header-wrap {
-            padding: 1.8rem 2rem;
-            max-width: 1250px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--border-line);
-        }
-
-        .nav-group {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            list-style: none;
-            width: 35%;
-        }
-
-        .nav-group.right {
-            justify-content: flex-end;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 500;
-            color: var(--text-dark);
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--accent-terracotta);
-        }
-
-        .btn-nav-pill {
-            background-color: var(--accent-terracotta);
-            color: #ffffff !important;
-            padding: 9px 24px;
-            border-radius: 40px;
-            letter-spacing: 2px;
-            font-size: 0.72rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(216, 140, 120, 0.25);
-            transition: all 0.3s ease;
-        }
-
-        .btn-nav-pill:hover {
-            background-color: var(--accent-terracotta-hover);
-            transform: translateY(-2px);
-        }
-
-        /* Center Circular College Emblem */
-        .center-logo-box {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            width: 30%;
-        }
-
-        .center-logo-box img {
-            width: 68px;
-            height: 68px;
-            object-fit: contain;
-            transition: transform 0.4s ease;
-        }
-
-        .center-logo-box:hover img {
-            transform: scale(1.05);
-        }
-
-        .center-logo-box span {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            letter-spacing: 1px;
-            margin-top: 4px;
-            text-transform: uppercase;
-        }
-
-        /* Hero Banner - Editorial Layout */
-        .hero-banner {
-            max-width: 1250px;
-            margin: 0 auto;
-            padding: 4rem 2rem 5rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 3rem;
-            position: relative;
-        }
-
-        .hero-text-side {
-            text-align: center;
-            padding: 1rem;
-        }
-
-        .hero-sub-label {
-            font-size: 0.78rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--accent-terracotta);
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            display: block;
-        }
-
-        .hero-main-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3.8vw, 3.2rem); /* Size auto-adjust ho jayega */
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: 1px;
-    color: var(--text-dark);
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    word-wrap: break-word;
-}
-
-        .hero-main-title .word-highlight {
-            color: var(--accent-terracotta);
-            font-weight: 400;
-        }
-
-        .hero-main-title .word-secondary {
-            color: var(--accent-sage);
-        }
-
-        .hero-btn-pill {
-            display: inline-block;
-            background-color: var(--accent-terracotta);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 14px 42px;
-            border-radius: 40px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            box-shadow: 0 6px 25px rgba(216, 140, 120, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .hero-btn-pill:hover {
-            background-color: var(--accent-terracotta-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(216, 140, 120, 0.4);
-        }
-
-        /* Hero Image Showcase */
-        .hero-image-side {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .image-soft-backdrop {
-            position: absolute;
-            width: 85%;
-            height: 95%;
-            background: radial-gradient(circle, #f3ece1 0%, rgba(250, 247, 242, 0) 70%);
-            z-index: 1;
-        }
-
-        .hero-lab-character {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 540px;
-    height: auto;
-    border-radius: 8px; /* Clean rectangular rounded border */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Subtle clean shadow */
-    transition: transform 0.4s ease;
-}
-        .hero-lab-character:hover {
-            transform: scale(1.02);
-        }
-
-        /* Experiments Section */
-        .experiments-wrap {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem 6rem;
-        }
-
-        .section-header-center {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header-center h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            font-weight: 400;
-            color: var(--text-dark);
-            margin-bottom: 0.4rem;
-        }
-
-        .section-header-center span {
-            font-size: 0.75rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .exp-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .exp-card-aesthetic {
-            background-color: var(--surface);
-            border: 1px solid var(--border-line);
-            border-radius: 4px;
-            padding: 2.2rem 1.8rem;
-            text-decoration: none;
-            color: var(--text-dark);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.35s ease;
-        }
-
-        .exp-card-aesthetic:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-terracotta);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
-        }
-
-        .exp-no {
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            color: var(--accent-terracotta);
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .exp-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.55rem;
-            font-weight: 600;
-            line-height: 1.25;
-            margin-bottom: 0.8rem;
-        }
-
-        .exp-desc {
-            font-size: 0.84rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-            margin-bottom: 1.8rem;
-        }
-
-        .exp-link-action {
-            font-size: 0.74rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent-terracotta);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* Minimal Editorial Footer */
-        .footer-clean {
-            border-top: 1px solid var(--border-line);
-            text-align: center;
-            padding: 3rem 1rem 2rem;
-        }
-
-        .footer-clean p {
-            color: var(--text-muted);
-            font-size: 0.78rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 960px) {
-            .hero-banner {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 3rem;
-            }
-            .header-wrap {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            .nav-group {
-                width: 100%;
-                justify-content: center;
-                gap: 1.5rem;
-            }
-            .center-logo-box {
-                order: -1;
-                width: 100%;
-            }
-        }
-        .top-welcome-bar {
-    background-color: var(--accent-terracotta);
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 1rem;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <!-- Top Bold Welcome Bar -->
-    <div class="top-welcome-bar">
-        Welcome to our website
+
+    <!-- Top Status Bar -->
+    <div class="top-bar">
+        <p>CSVTU Web Technology Laboratory</p>
+        <p id="liveClock" class="clock">Loading time...</p>
     </div>
 
-   
-    <!-- Centered Editorial Navigation -->
-    <header class="header-wrap">
-        <ul class="nav-group left">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="intro/faculty.html" class="nav-link">Faculty</a></li>
-            <li><a href="intro/members.html" class="nav-link">Team</a></li>
-        </ul>
+    <!-- Navigation -->
+    <header class="navbar">
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="intro/principal.html">Principal</a>
+            <a href="intro/faculty.html">Faculty</a>
+            <a href="intro/members.html">Team</a>
+        </nav>
 
-        <!-- Center College Logo -->
-        <a href="index.html" class="center-logo-box">
-            <img src="images/college.png" alt="GEC Ambikapur CSVTU Logo">
+        <a href="index.html" class="brand">
+            <img src="images/college.png" alt="GEC Ambikapur Logo">
             <span>GEC Ambikapur</span>
         </a>
 
-        <ul class="nav-group right">
-            <li><a href="#experiments" class="btn-nav-pill">Lab Experiments</a></li>
-        </ul>
+        <div class="nav-action">
+            <a href="#experiments" class="btn btn-sm">Lab Modules</a>
+        </div>
     </header>
 
-    <!-- Main Editorial Hero Section -->
-    <section class="hero-banner">
-        
-        <!-- Left Side: Editorial Spaced Typography -->
-        <div class="hero-text-side">
-            <span class="hero-sub-label">CSVTU • 7th Sem Computer Science</span>
-            <h1 class="hero-main-title">
-    <span class="word-highlight">Internet & Web </span><br>
-    <span class="word-secondary">Technology Lab</span>
-</h1>
-            <a href="#experiments" class="hero-btn-pill">Explore Practical 1-10</a>
+    <!-- Main Intro Banner -->
+    <section class="banner">
+        <div class="intro-text">
+            <span class="tag">CSVTU • 7th Sem CSE</span>
+            <h1 class="main-heading">Internet &amp; Web<br><span class="accent-text">Technology Lab</span></h1>
+            <p>A structured collection of 10 interactive practicals, backend scripts, and web development implementations.</p>
+            <a href="#experiments" class="btn btn-primary">Explore Experiments</a>
         </div>
 
-        <!-- Right Side: Clean Character Graphic -->
-        <div class="hero-image-side">
-            
-            <img class="Miracle of science" src="images/collage.jpg" alt="Lab Character Graphic">
+        <div class="collage">
+            <img src="images/collage.jpg" alt="GEC Ambikapur Campus">
         </div>
-
     </section>
 
-    <!-- 10 Experiments Cards Section -->
-    <main class="experiments-wrap" id="experiments">
-        <div class="section-header-center">
-            <h3>Laboratory Experiments</h3>
-            <span>Practical Implementations & Code</span>
-        </div>
+    <!-- Practical Experiments Grid -->
+    <main class="experiments" id="experiments">
+        <header class="section-title">
+            <h2>Laboratory Practicals</h2>
+            <p>Syllabus Implementations &amp; Source Code</p>
+        </header>
 
-        <div class="exp-grid">
-            
-            <!-- Experiment 01 (Syllabus Expt-6) -->
-            <a href="experiment-viewer.html?exp=1" class="exp-card-aesthetic">
-                <span class="exp-no">Experiment 01</span>
-                <h4 class="exp-name">CSVTU Student XML & CSS</h4>
-                <p class="exp-desc">XML schema storing 10 students' records (Enrollment, Roll, Branch, Email) rendered seamlessly with pure CSS styling.</p>
-                <span class="exp-link-action">Launch Module →</span>
-            </a>
+        <div class="grid">
+            <article class="card">
+                <span class="card-tag">Expt 01</span>
+                <h3>Student XML &amp; CSS</h3>
+                <p>XML schema storing 10 student records styled and rendered cleanly using external CSS rules.</p>
+                <a href="experiment-viewer.html?exp=1" class="card-link">View Module →</a>
+            </article>
 
-            <!-- Experiment 02 (Syllabus Expt-7) -->
-            <a href="experiment-viewer.html?exp=2" class="exp-card-aesthetic">
-                <span class="exp-no">Experiment 02</span>
-                <h4 class="exp-name">Server Info & UNIX Shell</h4>
-                <p class="exp-desc">Perl CGI scripts to display server environment variables (Software, Protocol) and execute UNIX commands from HTML forms.</p>
-                <span class="exp-link-action">Launch Module →</span>
-            </a>
+            <article class="card">
+                <span class="card-tag">Expt 02</span>
+                <h3>Server Info &amp; UNIX Commands</h3>
+                <p>Perl CGI scripts displaying server environment variables and executing command-line diagnostics.</p>
+                <a href="experiment-viewer.html?exp=2" class="card-link">View Module →</a>
+            </article>
 
-            <!-- Experiment 03 (Syllabus Expt-8) -->
-            <a href="experiment-viewer.html?exp=3" class="exp-card-aesthetic">
-                <span class="exp-no">Experiment 03</span>
-                <h4 class="exp-name">Random Greeting Generator</h4>
-                <p class="exp-desc">Backend Perl CGI application accepting username input and returning randomly selected dynamic greeting responses.</p>
-                <span class="exp-link-action">Launch Module →</span>
-            </a>
+            <article class="card">
+                <span class="card-tag">Expt 03</span>
+                <h3>Random Greeting Script</h3>
+                <p>Dynamic Perl CGI backend accepting user names and returning randomized greeting outputs.</p>
+                <a href="experiment-viewer.html?exp=3" class="card-link">View Module →</a>
+            </article>
 
-            <!-- Experiment 04 (Syllabus Expt-9) -->
-            <a href="experiment-viewer.html?exp=4" class="exp-card-aesthetic">
-                <span class="exp-no">Experiment 04</span>
-                <h4 class="exp-name">Perl Server Digital Clock</h4>
-                <p class="exp-desc">Dynamic server-side real-time clock generator built using Perl CGI parsing local server timestamp headers.</p>
-                <span class="exp-link-action">Launch Module →</span>
-            </a>
+            <article class="card">
+                <span class="card-tag">Expt 04</span>
+                <h3>Perl Digital Clock</h3>
+                <p>Server-side live digital clock script generating dynamic responses from server headers.</p>
+                <a href="experiment-viewer.html?exp=4" class="card-link">View Module →</a>
+            </article>
 
-            <!-- Experiment 05 (Syllabus Expt-10) -->
-            <a href="experiment-viewer.html?exp=5" class="exp-card-aesthetic">
-                <span class="exp-no">Experiment 05</span>
-                <h4 class="exp-name">MySQL Table Insertion (Perl)</h4>
-                <p class="exp-desc">Perl CGI database persistence script inserting name and age entries into MySQL and displaying updated records.</p>
-                <span class="exp-link-action">Launch Module →</span>
-            </a>
+            <article class="card">
+                <span class="card-tag">Expt 05</span>
+                <h3>MySQL Data Persistence</h3>
+                <p>Database script inserting name and age records into MySQL and rendering tabular updates.</p>
+                <a href="experiment-viewer.html?exp=5" class="card-link">View Module →</a>
+            </article>
 
-            <!-- Experiment 06 (Syllabus Expt-11) -->
-            <a href="experiment-viewer.html?exp=6" class="exp-card-aesthetic">
-                <span class="exp-no">Experiment 06</span>
-                <h4 class="exp-name">Cookie Last Visited Tracker</h4>
-                <p class="exp-desc">PHP cookie implementation storing visitor timestamps and displaying 'Last Visited on Date-Time' upon page reopen.</p>
-                <span class="exp-link-action">Launch Module →</span>
-            </a>
+            <article class="card">
+                <span class="card-tag">Expt 06</span>
+                <h3>Cookie Visit Tracker</h3>
+                <p>PHP cookie session tracking last visited timestamp and displaying historical session logs.</p>
+                <a href="experiment-viewer.html?exp=6" class="card-link">View Module →</a>
+            </article>
 
-            <!-- Experiment 07 (Syllabus Expt-12) -->
-            <a href="experiment-viewer.html?exp=7" class="exp-card-aesthetic">
-                <span class="exp-no">Experiment 07</span>
-                <h4 class="exp-name">Session Page View Counter</h4>
-                <p class="exp-desc">PHP session state management tracking total page hits and auto-incrementing visit counts per refresh cycle.</p>
-                <span class="exp-link-action">Launch Module →</span>
-            </a>
+            <article class="card">
+                <span class="card-tag">Expt 07</span>
+                <h3>Page View Counter</h3>
+                <p>PHP state management implementing automatic hit counters across browser page refreshes.</p>
+                <a href="experiment-viewer.html?exp=7" class="card-link">View Module →</a>
+            </article>
 
-            <!-- Experiment 08 (Syllabus Expt-13) -->
-            <a href="experiment-viewer.html?exp=8" class="exp-card-aesthetic">
-                <span class="exp-no">Experiment 08</span>
-                <h4 class="exp-name">XHTML Form & Name Search</h4>
-                <p class="exp-desc">XHTML address form storing records into MySQL and dynamic data retrieval querying specific student names.</p>
-                <span class="exp-link-action">Launch Module →</span>
-            </a>
+            <article class="card">
+                <span class="card-tag">Expt 08</span>
+                <h3>Address Search &amp; Storage</h3>
+                <p>XHTML data entry forms saving inputs to MySQL with instant name-based query filters.</p>
+                <a href="experiment-viewer.html?exp=8" class="card-link">View Module →</a>
+            </article>
 
-            <!-- Experiment 09 (Syllabus Expt-14) -->
-            <a href="experiment-viewer.html?exp=9" class="exp-card-aesthetic">
-                <span class="exp-no">Experiment 09</span>
-                <h4 class="exp-name">Book Database & Search</h4>
-                <p class="exp-desc">PHP system capturing accession number, title, author, edition, and publisher with tabular search filter outputs.</p>
-                <span class="exp-link-action">Launch Module →</span>
-            </a>
+            <article class="card">
+                <span class="card-tag">Expt 09</span>
+                <h3>Book Catalog Filter</h3>
+                <p>Library database querying accession numbers, authors, titles, and publication editions.</p>
+                <a href="experiment-viewer.html?exp=9" class="card-link">View Module →</a>
+            </article>
 
-            <!-- Experiment 10 (Syllabus Expt-15) -->
-            <a href="experiment-viewer.html?exp=10" class="exp-card-aesthetic">
-                <span class="exp-no">Experiment 10</span>
-                <h4 class="exp-name">Amazon-Style Bookstore Portal</h4>
-                <p class="exp-desc">Complete e-commerce web app: Auth, User Profile, Catalog, Cart, Credit Card Checkout & JS Form Validation.</p>
-                <span class="exp-link-action">Launch Module →</span>
-            </a>
-
+            <article class="card">
+                <span class="card-tag">Expt 10</span>
+                <h3>Bookstore Web Portal</h3>
+                <p>Complete e-commerce platform with user authentication, book catalog, cart, and validations.</p>
+                <a href="experiment-viewer.html?exp=10" class="card-link">View Module →</a>
+            </article>
         </div>
     </main>
 
-    <!-- Clean Minimal Footer -->
-    <footer class="footer-clean">
+    <!-- Footer -->
+    <footer class="footer">
         <p>Government Engineering College, Ambikapur • CSVTU Bhilai (C.G.)</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
