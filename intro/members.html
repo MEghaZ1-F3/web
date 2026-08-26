@@ -4,75 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editorial Team Profiles | Web Tech Lab</title>
-    <!-- Google Aesthetic Serif & Sans Fonts -->
+    <!-- Google Aesthetic Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="members.css">
+    
 </head>
 <body>
 
-    <!-- Minimal Top Header Bar -->
-    <header class="top-nav-bar">
-        <a href="../index.html" class="nav-back-link">← Portal</a>
-        <a href="faculty.html" class="nav-back-link">Faculty</a>
-        <a href="../experiment-viewer.html" class="nav-back-link highlight">Lab Modules →</a>
+    <!-- Header -->
+    <header class="top-banner">
+        <h1 class="main-editorial-title" id="display-name">Amjad Khan</h1>
+        <p class="sub-tagline">Department of Computer Science & Engineering • 7th Sem</p>
     </header>
 
-    <!-- Top Big Heading & Pill Selectors -->
-    <section class="top-banner">
-        <h1 class="top-hero-name" id="topHeroName">Amjad Khan</h1>
-        <p class="top-hero-sub">DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING • 7TH SEM</p>
+    <!-- Member Selection Navigation -->
+    <nav class="member-tabs">
+        <button class="tab-btn active" onclick="switchMember('amjad')">Amjad Khan</button>
+        <button class="tab-btn" onclick="switchMember('neelam_t')">Neelam Thakur</button>
+        <button class="tab-btn" onclick="switchMember('ayush')">Ayush Kaushik</button>
+        <button class="tab-btn" onclick="switchMember('neelam_k')">Neelam Korram</button>
+    </nav>
 
-        <div class="pills-container">
-            <button class="pill-btn active" onclick="switchMember(0)">AMJAD KHAN</button>
-            <button class="pill-btn" onclick="switchMember(1)">NEELAM THAKUR</button>
-            <button class="pill-btn" onclick="switchMember(2)">AYUSH KAUSHIK</button>
-            <button class="pill-btn" onclick="switchMember(3)">NEELAM KORRAM</button>
+    <!-- Main Editorial Showcase -->
+    <main class="editorial-container">
+        
+        <!-- Left Pane: Layered Photos -->
+        <div class="image-composition">
+            <div class="bg-backdrop-box"></div>
+            <!-- Background aesthetic architectural photo -->
+            <img class="bg-arch-photo" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Aesthetic Background">
+            <!-- Front Member Portrait (Replace src with your local image) -->
+           <img class="front-portrait-photo" id="member-photo" src="../images/Amjad.jpeg" alt="Member Portrait">
         </div>
-    </section>
 
-    <!-- Showcase Area (Exact 2 Overlapping Images + Details) -->
-    <main class="showcase-wrapper">
-        <div class="showcase-grid" id="memberShowcase">
-            
-            <!-- Left Side: Dual Photo Overlap Frame -->
-            <div class="image-column">
-                <!-- 1. Background Interior Photo -->
-                <div class="back-photo-card">
-                    <img src="../images/Daynne.jpg" alt="Interior Aesthetic Mood">
-                </div>
-                <!-- 2. Light Blue Accent Shape -->
-                <div class="accent-blue-shape"></div>
-                <!-- 3. Front Student Portrait Photo -->
-                <div class="front-photo-card">
-                    <img id="memberPhoto" src="../images/Amjad.jpeg" alt="Member Portrait">
-                </div>
+        <!-- Right Pane: Bio & Details -->
+        <div class="member-info-pane">
+            <span class="member-role" id="member-role">Lead Developer & Full-Stack Architect</span>
+            <h2 class="member-quote" id="member-quote">Designing digital interfaces with precision and clean architecture.</h2>
+            <p class="member-bio" id="member-bio">
+                Contributed to the core implementation of the Web Technology Laboratory portal, focusing on modular architecture, responsive UI components, and integrating interactive experiments.
+            </p>
+
+            <div class="academic-pills">
+                <span class="pill" id="pill-branch">BRANCH: CSE</span>
+                <span class="pill" id="pill-sem">SEMESTER: 7TH</span>
+                <span class="pill" id="pill-role">ROLE: CORE LOGIC & DB</span>
             </div>
 
-            <!-- Right Side: Content Details -->
-            <div class="content-column">
-                <span class="role-tagline" id="memberRole">FULL STACK & BACKEND LEAD</span>
-                <h2 class="person-title" id="memberName">Amjad Khan</h2>
-                <p class="person-bio" id="memberBio">
-                    7th Semester Computer Science undergraduate at GEC Ambikapur. Specialized in full-stack architecture, XML schemas, and Perl CGI scripting implementations.
-                </p>
-
-                <!-- Information Badges -->
-                <div class="info-badges-row">
-                    <div class="badge-pill" id="badgeBranch">BRANCH: CSE</div>
-                    <div class="badge-pill" id="badgeSem">SEMESTER: 7TH</div>
-                    <div class="badge-pill" id="badgeRoll">ROLL: 3010203001</div>
-                </div>
-
-                <div class="action-buttons-row">
-                    <a href="../experiment-viewer.html" class="btn-primary-action">Explore Lab Experiments</a>
-                </div>
-            </div>
-
+            <a href="../1_to_10_experiment.html" class="btn-peach">Explore Lab Experiments</a>
         </div>
+
     </main>
 
-    <script src="members.js?v=3.0"></script>
+   
+
+    <!-- Back link -->
+    <div class="bottom-actions">
+        <a href="../index.html" class="btn-back-home">← Return to Portal Home</a>
+    </div>
+
+    <!-- Switch Logic -->
+   <script src=members.js></script>"</script>
 </body>
 </html>

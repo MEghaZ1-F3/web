@@ -1,83 +1,49 @@
-// Exact Case-Sensitive Filenames matching explorer
-const membersData = [
-    {
-        name: "Amjad Khan",
-        role: "FULL STACK & BACKEND LEAD",
-        bio: "7th Semester Computer Science undergraduate at GEC Ambikapur. Specialized in full-stack architecture, XML schemas, and Perl CGI scripting implementations.",
-        branch: "BRANCH: CSE",
-        sem: "SEMESTER: 7TH",
-        roll: "ROLL: 3010203001",
-        photo: "../images/Amjad.jpeg"
-    },
-    {
-        name: "Neelam Thakur",
-        role: "UI/UX & FRONTEND DEVELOPER",
-        bio: "7th Semester Computer Science undergraduate at GEC Ambikapur. Focused on responsive interface design, CSS grid styling, and interactive client validations.",
-        branch: "BRANCH: CSE",
-        sem: "SEMESTER: 7TH",
-        roll: "ROLL: 3010203002",
-        photo: "../images/Neelam thakur.jpeg"
-    },
-    {
-        name: "Ayush Kaushik",
-        role: "DATABASE & PHP SPECIALIST",
-        bio: "7th Semester Computer Science undergraduate at GEC Ambikapur. Implementing MySQL persistence layers, PHP session states, and query handling algorithms.",
-        branch: "BRANCH: CSE",
-        sem: "SEMESTER: 7TH",
-        roll: "ROLL: 3010203003",
-        photo: "../images/Ayush kaushik.jpeg"
-    },
-    {
-        name: "Neelam Korram",
-        role: "SYSTEMS & TESTING ANALYST",
-        bio: "7th Semester Computer Science undergraduate at GEC Ambikapur. Specialized in UNIX shell environment diagnostics, Perl execution workflows, and testing.",
-        branch: "BRANCH: CSE",
-        sem: "SEMESTER: 7TH",
-        roll: "ROLL: 3010203004",
-        photo: "../images/Neelam korram.jpeg"
-    }
-];
 
-function switchMember(index) {
-    const member = membersData[index];
-    if (!member) return;
+        const membersData = {
+            "amjad": {
+                name: "Amjad Khan",
+                
+                photo: "/images/Amjad.jpeg"
+            },
+            "neelam_t": {
+                name: "Neelam Thakur",
+                role: "UI/UX & Frontend Specialist,Gaunwa neighbour",
+                quote: " bhot dimag khapa hai, Noni jhan smart ban ",
+                
+                specialty: "ROLE: FRONTEND & STYLING",
+                photo: "/images/Neelam thakur.jpeg"
+            },
+            "ayush": {
+                name: "Ayush Kaushik",
+                photo: "/images/Ayush kaushik.jpeg"
+            },
+            "neelam_k": {
+                name: "Neelam Korram",
+                role: ",Gaunwa ki Dost",
+                quote: ".,noni  jhan muh bnate re",
+                
+                specialty: "ROLE: DATABASE & VALIDATION",
+                photo: "/images/Neelam korram.jpeg"
+            }
+        };
 
-    // Update active button styling
-    const pillButtons = document.querySelectorAll('.pill-btn');
-    pillButtons.forEach((btn, i) => {
-        btn.classList.toggle('active', i === index);
-    });
+        function switchMember(key) {
+            const data = membersData[key];
+            if (!data) return;
 
-    const topHeroName = document.getElementById('topHeroName');
-    const showcase = document.getElementById('memberShowcase');
+            // Update Text Elements
+            document.getElementById("display-name").innerText = data.name;
+            document.getElementById("member-role").innerText = data.role;
+            document.getElementById("member-quote").innerText = data.quote;
+            document.getElementById("member-bio").innerText = data.bio;
+            document.getElementById("pill-role").innerText = data.specialty;
+            
+            // Update Photo
+            document.getElementById("member-photo").src = data.photo;
 
-    if (showcase) showcase.style.opacity = '0';
-    if (topHeroName) topHeroName.style.opacity = '0';
-
-    setTimeout(() => {
-        if (topHeroName) {
-            topHeroName.innerText = member.name;
-            topHeroName.style.opacity = '1';
+            // Update Active Tab Pill
+            const buttons = document.querySelectorAll(".tab-btn");
+            buttons.forEach(btn => btn.classList.remove("active"));
+            event.target.classList.add("active");
         }
-        
-        // Exact IDs mapped to data properties
-        document.getElementById('memberRole').innerText = member.role;
-        document.getElementById('memberName').innerText = member.name;
-        document.getElementById('memberBio').innerText = member.bio;
-        document.getElementById('badgeBranch').innerText = member.branch;
-        document.getElementById('badgeSem').innerText = member.sem;
-        document.getElementById('badgeRoll').innerText = member.roll;
-        
-        const photoEl = document.getElementById('memberPhoto');
-        if (photoEl) {
-            photoEl.src = member.photo;
-        }
-
-        if (showcase) showcase.style.opacity = '1';
-    }, 150);
-}
-
-// Default run
-window.addEventListener('DOMContentLoaded', () => {
-    switchMember(0);
-});
+    
