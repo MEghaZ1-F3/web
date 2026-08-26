@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment Runner | Web Technology Lab</title>
+    <!-- Google Aesthetic Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Fira+Code:wght@400;500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="experiment-viewer.css">
+   
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <a href="index.html" class="brand-link">
+            <img src="images/college.png" alt="GEC Ambikapur">
+            <div class="brand-title">
+                <h2>GEC Ambikapur</h2>
+                <span>Interactive Web Tech Lab</span>
+            </div>
+        </a>
+
+        <div class="nav-actions">
+            <a href="index.html" class="btn-home-back">← Back to Portal</a>
+            <a href="intro/members.html">Team</a>
+            <a href="intro/faculty.html">Faculty</a>
+        </div>
+    </nav>
+
+    <!-- 10 Experiments Selector Bar -->
+    <div class="exp-selector-bar">
+        <button class="exp-tab-btn active" onclick="loadExperiment(1)">Exp 01: XML & CSS</button>
+        <button class="exp-tab-btn" onclick="loadExperiment(2)">Exp 02: Server & Shell</button>
+        <button class="exp-tab-btn" onclick="loadExperiment(3)">Exp 03: Perl Greeting</button>
+        <button class="exp-tab-btn" onclick="loadExperiment(4)">Exp 04: Server Clock</button>
+        <button class="exp-tab-btn" onclick="loadExperiment(5)">Exp 05: Perl + MySQL</button>
+        <button class="exp-tab-btn" onclick="loadExperiment(6)">Exp 06: Cookie Tracker</button>
+        <button class="exp-tab-btn" onclick="loadExperiment(7)">Exp 07: Session Count</button>
+        <button class="exp-tab-btn" onclick="loadExperiment(8)">Exp 08: Name Retrieval</button>
+        <button class="exp-tab-btn" onclick="loadExperiment(9)">Exp 09: Book DB Search</button>
+        <button class="exp-tab-btn" onclick="loadExperiment(10)">Exp 10: Bookstore Portal</button>
+    </div>
+
+    <!-- Active Experiment Meta Info -->
+    <div class="exp-info-card">
+        <div class="exp-info-left">
+            <div class="exp-badge-line" id="exp-badge">CSVTU SYLLABUS • EXPT 06</div>
+            <h1 id="exp-title">Student Data Schema using XML & CSS</h1>
+            <p id="exp-desc">Design an XML document to store information for 10 engineering students and render it with CSS styling.</p>
+        </div>
+    </div>
+
+    <!-- Split Screen Code Runner Workspace -->
+    <div class="split-workspace">
+        
+        <!-- Left: Code Area -->
+        <div class="pane-editor">
+            <div class="pane-header">
+                <span class="pane-title" id="code-lang-label">📄 Source Code</span>
+                <div class="pane-controls">
+                    <button class="btn-ctrl" onclick="copySourceCode()">📋 Copy</button>
+                    <button class="btn-ctrl" onclick="resetSourceCode()">↺ Reset</button>
+                    <button class="btn-ctrl btn-run" onclick="executeCurrentCode()">▶ Run Code</button>
+                </div>
+            </div>
+            <textarea id="code-editor" spellcheck="false"></textarea>
+        </div>
+
+        <!-- Right: Output Preview Area -->
+        <div class="pane-output">
+            <div class="output-header">
+                <span class="output-title">⚡ Live Interactive Output</span>
+                <button class="btn-ctrl" style="background:#ffffff; color:var(--text-dark); border:1px solid var(--border-line);" onclick="executeCurrentCode()">Refresh Output</button>
+            </div>
+            <iframe id="live-preview" sandbox="allow-scripts allow-same-origin allow-modals"></iframe>
+        </div>
+
+    </div>
+
+    <!-- Link to JavaScript Engine -->
+    <script src="experiment-viewer.js"></script>
+</body>
+</html>

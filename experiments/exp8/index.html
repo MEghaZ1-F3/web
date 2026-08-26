@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 20px; background: #faf7f2; color: #23201d; margin: 0; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .box { background: white; padding: 18px; border-radius: 6px; border: 1px solid #ddd; }
+        input { width: 90%; padding: 7px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #d88c78; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: 600; }
+        .res-item { background: #f9f9f9; padding: 8px; border-left: 3px solid #3a5a40; margin-top: 8px; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="box">
+            <h4>Add Contact Info</h4>
+            <input type="text" id="cName" placeholder="Full Name">
+            <input type="text" id="cAddr1" placeholder="Address Line 1">
+            <input type="text" id="cAddr2" placeholder="Address Line 2">
+            <input type="email" id="cEmail" placeholder="Email Address">
+            <button onclick="saveContact()">Save to MySQL</button>
+        </div>
+        <div class="box">
+            <h4>Search by Name</h4>
+            <input type="text" id="sQuery" placeholder="Type name to retrieve...">
+            <button onclick="searchContact()">Query Database</button>
+            <div id="searchRes"></div>
+        </div>
+    </div>
+    <script>
+        const data = [
+            { name: "Amjad Khan", addr1: "Civil Lines", addr2: "Ambikapur", email: "amjad@gec.ac.in" },
+            { name: "Neelam Thakur", addr1: "Main Road", addr2: "Raipur", email: "neelam@gec.ac.in" }
+        ];
+        function saveContact() {
+            const n = document.getElementById('cName').value;
+            const a1 = document.getElementById('cAddr1').value;
+            const a2 = document.getElementById('cAddr2').value;
+            const e = document.getElementById('cEmail').value;
+            if(!n) return alert("Please enter a name!");
+            data.push({ name: n, addr1: a1, addr2: a2, email: e });
+            alert("Record Saved Successfully!");
+            document.getElementById('cName').value = '';
+            document.getElementById('cAddr1').value = '';
+            document.getElementById('cAddr2').value = '';
+            document.getElementById('cEmail').value = '';
+        }
+        function searchContact() {
+            const q = document.getElementById('sQuery').value.toLowerCase();
+            const filtered = data.filter(d => d.name.toLowerCase().includes(q));
+            const resDiv = document.getElementById('searchRes');
+            if(filtered.length === 0) { resDiv.innerHTML = "<p>No record found.</p>"; return; }
+            resDiv.innerHTML = filtered.map(f => "<div class='res-item'><b>" + f.name + "</b><br>" + f.addr1 + ", " + f.addr2 + "<br>Email: " + f.email + "</div>").join('');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { background: #23201d; color: #ffffff; text-align: center; font-family: 'Segoe UI', sans-serif; padding-top: 40px; margin: 0; }
+        .clock-frame { display: inline-block; background: #141312; border: 2px solid #d88c78; border-radius: 12px; padding: 30px 45px; box-shadow: 0 0 25px rgba(216, 140, 120, 0.2); }
+        .clock-digits { font-family: monospace; font-size: 2.8rem; font-weight: bold; color: #d88c78; letter-spacing: 4px; }
+        .clock-sub { font-size: 0.8rem; color: #999; margin-top: 10px; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+    <h2>PERL CGI SERVER CLOCK</h2>
+    <div class="clock-frame">
+        <div class="clock-digits" id="liveClock">00 : 00 : 00</div>
+        <div class="clock-sub">SERVER TIMEZONE: IST (GMT+5:30)</div>
+    </div>
+    <script>
+        function updateClock() {
+            const d = new Date();
+            const h = String(d.getHours()).padStart(2, '0');
+            const m = String(d.getMinutes()).padStart(2, '0');
+            const s = String(d.getSeconds()).padStart(2, '0');
+            document.getElementById('liveClock').innerText = h + ' : ' + m + ' : ' + s;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

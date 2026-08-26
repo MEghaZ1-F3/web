@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Mentors | Web Tech Lab</title>
+    <!-- Google Aesthetic Serif & Sans Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="faculty.css">
+</head>
+<body>
+
+    <!-- Top Minimal Navigation -->
+    <header class="header-container">
+        <nav class="navbar">
+            <a href="../index.html" class="logo-brand">
+                <img src="../images/college.png" alt="CSVTU GEC Logo">
+                <div class="brand-text">
+                    <h2>GEC Ambikapur</h2>
+                    <span>Dept. of Computer Science & Engg</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="faculty.html" class="active">Faculty</a></li>
+                <li><a href="member.html">Team</a></li>
+                <li><a href="../experiment-viewer.html" class="btn-nav-primary">Lab Modules</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Top Big Editorial Dynamic Title (Like Screenshot) -->
+    <section class="top-banner">
+        <h1 class="top-hero-name" id="topHeroName">Dr. Ankit Arora</h1>
+        <p class="top-hero-sub">DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING • FACULTY MENTORS</p>
+        
+        <!-- 4 Faculty Selector Pill Buttons -->
+        <div class="pills-container">
+            <button class="pill-btn active" onclick="switchFaculty(0)" id="pill-0">DR. ANKIT ARORA</button>
+            <button class="pill-btn" onclick="switchFaculty(1)" id="pill-1">Assi.Prof. JASMIN MINJ</button>
+            <button class="pill-btn" onclick="switchFaculty(2)" id="pill-2">Dr. MOhan Rao Mamdikar</button>
+            <button class="pill-btn" onclick="switchFaculty(3)" id="pill-3">Assi.prof. Pooja patre</button>
+        </div>
+    </section>
+
+    <!-- Main Dynamic Showcase Area (Left Overlapping Image + Right Content) -->
+    <main class="showcase-wrapper">
+        <div class="showcase-grid" id="showcaseContainer">
+            
+            <!-- Left Side: Overlapping Aesthetic Photo Frame -->
+            <div class="image-column">
+                <div class="ambient-backdrop"></div>
+                <div class="main-portrait-box">
+                    <img id="facPhoto" src="../images/college.png" alt="Faculty Portrait">
+                </div>
+            </div>
+
+            <!-- Right Side: Details & Dynamic Info Pills -->
+            <div class="content-column">
+                <span class="role-tagline" id="facTagline">HEAD OF DEPARTMENT & ASST. PROFESSOR</span>
+                <h2 class="person-title" id="facName">Dr. Ankit Arora</h2>
+                <p class="person-bio" id="facBio">
+                    Serving as Assistant Professor & HOD in the Department of Computer Science & Engineering at Government Engineering College, Ambikapur. Specialized in Web Architecture, Cloud Computing, and Advanced Database Systems.
+                </p>
+
+                <!-- Info Badges / Pills -->
+                <div class="info-badges-row">
+                    <div class="badge-pill" id="badgeExp">EXPERIENCE: 18 YEARS</div>
+                    <div class="badge-pill" id="badgeQual">PH.D. (2023)</div>
+                    <div class="badge-pill" id="badgeMTech">M.TECH: CSVTU (2013)</div>
+                    <div class="badge-pill" id="badgeBTech">B.TECH: PRSU (2008)</div>
+                </div>
+
+                <!-- Contact & Action Buttons -->
+                <div class="action-buttons-row">
+                    <a href="mailto:AnkitArora1286@gmail.com" id="facEmailBtn" class="btn-primary-action">
+                        ✉ <span id="facEmailText">AnkitArora1286@gmail.com</span>
+                    </a>
+                    <a href="tel:7000495447" id="facPhoneBtn" class="btn-secondary-action">
+                        📞 <span id="facPhoneText">+91 7000495447</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Minimal Clean Footer -->
+    <footer class="footer-minimal">
+        <p>© Government Engineering College, Ambikapur • Constituent College of CSVTU Bhilai</p>
+    </footer>
+
+    <script src="faculty.js"></script>
+</body>
+</html>

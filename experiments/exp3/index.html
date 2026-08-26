@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 25px; text-align: center; background: #faf7f2; color: #23201d; margin: 0; }
+        .card { background: white; padding: 25px; border-radius: 8px; border: 1px solid #ece6dc; max-width: 420px; margin: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        input { width: 90%; padding: 10px; margin: 12px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #d88c78; color: white; border: none; padding: 10px 20px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        .greeting-box { margin-top: 20px; padding: 15px; background: #eef6ee; border: 1px solid #b2d8b2; border-radius: 6px; color: #2e6930; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h3>Perl Greeting Form</h3>
+        <input type="text" id="userName" placeholder="Enter your name" value="Amjad Khan">
+        <br>
+        <button onclick="generateGreeting()">Submit to Perl CGI</button>
+        <div class="greeting-box" id="greetBox">Click submit to pick a random greeting!</div>
+    </div>
+    <script>
+        const greets = [
+            "Welcome to CSVTU Web Technology Portal, {n}!",
+            "Great to see you here today, {n}! Have an inspired session.",
+            "Greetings {n}! Wishing you a productive day in the lab.",
+            "Hello {n}! Keep learning, building, and innovating."
+        ];
+        function generateGreeting() {
+            const n = document.getElementById('userName').value || "Guest";
+            const r = greets[Math.floor(Math.random() * greets.length)].replace('{n}', n);
+            document.getElementById('greetBox').innerText = r;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #eaeded; padding: 20px; margin: 0; color: #111; }
+        .nav { background: #131921; color: white; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-radius: 4px; }
+        .nav-brand { font-size: 1.2rem; font-weight: bold; }
+        .nav-brand span { color: #f3a847; }
+        .book-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+        .card { background: white; padding: 15px; border-radius: 4px; border: 1px solid #ddd; }
+        .btn-amz { background: #ffd814; border: 1px solid #fcd200; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+        .checkout-box { background: white; padding: 20px; margin-top: 15px; border-radius: 4px; border: 1px solid #ddd; }
+        input { width: 95%; padding: 8px; margin: 6px 0 12px; border: 1px solid #ccc; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-brand">amazon<span>.in</span> Bookstore</div>
+        <div>Cart: <b id="cartCount">0</b> items</div>
+    </div>
+    <div class="book-grid">
+        <div class="card">
+            <h4>Web Programming & CGI</h4>
+            <p style="color:#b12704; font-weight:bold;">₹499.00</p>
+            <button class="btn-amz" onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <h4>PHP & MySQL Novice to Ninja</h4>
+            <p style="color:#b12704; font-weight:bold;">₹650.00</p>
+            <button class="btn-amz" onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+    <div class="checkout-box">
+        <h4>Credit Card Checkout Validation</h4>
+        <label>Card Number (16 Digits)</label>
+        <input type="text" id="amzCard" placeholder="1234567890123456" maxlength="16">
+        <label>CVV (3 Digits)</label>
+        <input type="password" id="amzCvv" placeholder="123" maxlength="3">
+        <button class="btn-amz" style="background:#ffa41c; width:100%;" onclick="validateAmz()">Place Order & Pay</button>
+        <div id="orderStatus" style="margin-top:10px; font-weight:bold;"></div>
+    </div>
+    <script>
+        let cart = 0;
+        function addToCart() { cart++; document.getElementById('cartCount').innerText = cart; }
+        function validateAmz() {
+            const c = document.getElementById('amzCard').value;
+            const v = document.getElementById('amzCvv').value;
+            const s = document.getElementById('orderStatus');
+            if(c.length !== 16 || isNaN(c)) {
+                s.innerHTML = "<span style='color:red;'>❌ Invalid 16-digit card number.</span>";
+                return;
+            }
+            if(v.length !== 3 || isNaN(v)) {
+                s.innerHTML = "<span style='color:red;'>❌ Invalid 3-digit CVV.</span>";
+                return;
+            }
+            s.innerHTML = "<span style='color:green;'>✔ Order Confirmed! Payment of ₹" + (cart * 499) + " Successful.</span>";
+        }
+    </script>
+</body>
+</html>

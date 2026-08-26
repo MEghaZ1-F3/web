@@ -1,0 +1,39 @@
+csvtu_college {
+    display: block;
+    background-color: #faf7f2;
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+student {
+    display: block;
+    background-color: #ffffff;
+    border: 1px solid #ece6dc;
+    border-left: 5px solid #d88c78;
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+name {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #23201d;
+    margin-bottom: 10px;
+}
+
+enrolment, univ_roll, college_name, branch, year_of_joining, email {
+    display: block;
+    font-size: 0.86rem;
+    color: #555;
+    margin: 4px 0;
+}
+
+enrolment::before { content: "Enrolment No: "; font-weight: 600; color: #3a5a40; }
+univ_roll::before { content: "University Roll: "; font-weight: 600; color: #23201d; }
+college_name::before { content: "College: "; font-weight: 600; }
+branch::before { content: "Branch: "; font-weight: 600; }
+year_of_joining::before { content: "Year of Joining: "; font-weight: 600; }
+email::before { content: "Email: "; font-weight: 600; color: #d88c78; }

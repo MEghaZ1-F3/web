@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 20px; background: #faf7f2; color: #23201d; margin: 0; }
+        .info-box { background: #ffffff; border: 1px solid #ece6dc; padding: 15px; border-radius: 6px; margin-bottom: 20px; }
+        input[type="text"] { width: 70%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #d88c78; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: 600; }
+        pre { background: #23201d; color: #00ff66; padding: 12px; border-radius: 4px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h3>(a) Server Environment Variables</h3>
+    <div class="info-box">
+        <p><b>SERVER_NAME:</b> gecambikapur.ac.in</p>
+        <p><b>SERVER_SOFTWARE:</b> Ubantu</p>
+        <p><b>GATEWAY_INTERFACE:</b> CGI/1.1</p>
+        <p><b>SERVER_PROTOCOL:</b> HTTPs/1.1</p>
+        <p><b>CGI VERSION:</b> Perl CGI.pm v4.54</p>
+    </div>
+    <h3>(b) Execute UNIX Command</h3>
+    <div>
+        <input type="text" id="cmdInput" value="whoami & date">
+        <button onclick="runCmd()">Execute</button>
+    </div>
+    <h4 style="margin-top:15px;">Output:</h4>
+    <pre id="cmdOutput">www-data&#10;Mon Aug 24 10:15:32 IST 2026</pre>
+    <script>
+        function runCmd() {
+            const c = document.getElementById('cmdInput').value;
+            document.getElementById('cmdOutput').innerText = "Executing: " + c + "\nStatus: 200 OK (0.02ms)\nOutput: \nroot\nMon Aug 24 10:20:00 IST 2026";
+        }
+    </script>
+</body>
+</html>

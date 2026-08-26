@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<csvtu_college name="Government Engineering College, Ambikapur">
+    <student>
+        <enrolment>ET2020CSE001</enrolment>
+        <univ_roll>3010203001</univ_roll>
+        <name>Amjad Khan</name>
+        <college_name>GEC Ambikapur</college_name>
+        <branch>Computer Science &amp; Engineering</branch>
+        <year_of_joining>2020</year_of_joining>
+        <email>amjad.khan@gecambikapur.ac.in</email>
+    </student>
+    <student>
+        <enrolment>ET2020CSE002</enrolment>
+        <univ_roll>3010203002</univ_roll>
+        <name>Neelam Thakur</name>
+        <college_name>GEC Ambikapur</college_name>
+        <branch>Computer Science &amp; Engineering</branch>
+        <year_of_joining>2020</year_of_joining>
+        <email>neelam.thakur@gecambikapur.ac.in</email>
+    </student>
+    <student>
+        <enrolment>ET2020CSE003</enrolment>
+        <univ_roll>3010203003</univ_roll>
+        <name>Ayush Kaushik</name>
+        <college_name>GEC Ambikapur</college_name>
+        <branch>Computer Science &amp; Engineering</branch>
+        <year_of_joining>2020</year_of_joining>
+        <email>ayush.kaushik@gecambikapur.ac.in</email>
+    </student>
+    <student>
+        <enrolment>ET2020CSE004</enrolment>
+        <univ_roll>3010203004</univ_roll>
+        <name>Neelam Korram</name>
+        <college_name>GEC Ambikapur</college_name>
+        <branch>Computer Science &amp; Engineering</branch>
+        <year_of_joining>2020</year_of_joining>
+        <email>neelam.korram@gecambikapur.ac.in</email>
+    </student>
+    <student>
+        <enrolment>ET2020CSE005</enrolment>
+        <univ_roll>3010203005</univ_roll>
+        <name>Rohit Sharma</name>
+        <college_name>GEC Ambikapur</college_name>
+        <branch>Computer Science &amp; Engineering</branch>
+        <year_of_joining>2020</year_of_joining>
+        <email>rohit.sharma@gecambikapur.ac.in</email>
+    </student>
+    <student>
+        <enrolment>ET2020CSE006</enrolment>
+        <univ_roll>3010203006</univ_roll>
+        <name>Ms.Dhoni</name>
+        <college_name>GEC Ambikapur</college_name>
+        <branch>Computer Science &amp; Engineering</branch>
+        <year_of_joining>2020</year_of_joining>
+        <email>Ms.Dhoni@gecambikapur.ac.in</email>
+    </student>
+    <student>
+        <enrolment>ET2020CSE007</enrolment>
+        <univ_roll>3010203007</univ_roll>
+        <name>Virat kholi</name>
+        <college_name>GEC Ambikapur</college_name>
+        <branch>Computer Science &amp; Engineering</branch>
+        <year_of_joining>2020</year_of_joining>
+        <email>Virat.kholi@gecambikapur.ac.in</email>
+    </student>
+    <student>
+        <enrolment>ET2020CSE008</enrolment>
+        <univ_roll>3010203008</univ_roll>
+        <name>Shubhman gill</name>
+        <college_name>GEC Ambikapur</college_name>
+        <branch>Computer Science &amp; Engineering</branch>
+        <year_of_joining>2020</year_of_joining>
+        <email>Shubhman.gill@gecambikapur.ac.in</email>
+    </student>
+    <student>
+        <enrolment>ET2020CSE009</enrolment>
+        <univ_roll>3010203009</univ_roll>
+        <name>Ishan kishan</name>
+        <college_name>GEC Ambikapur</college_name>
+        <branch>Computer Science &amp; Engineering</branch>
+        <year_of_joining>2020</year_of_joining>
+        <email>Ishan.kishan@gecambikapur.ac.in</email>
+    </student>
+    <student>
+        <enrolment>ET2020CSE010</enrolment>
+        <univ_roll>3010203010</univ_roll>
+        <name>Abhishekh sharma</name>
+        <college_name>GEC Ambikapur</college_name>
+        <branch>Computer Science &amp; Engineering</branch>
+        <year_of_joining>2020</year_of_joining>
+        <email>Abhishekh.Sharma@gecambikapur.ac.in</email>
+    </student>
+</csvtu_college>

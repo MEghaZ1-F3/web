@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; padding-top: 40px; background: #faf7f2; color: #23201d; margin: 0; }
+        .session-box { background: white; display: inline-block; padding: 30px 50px; border-radius: 8px; border: 1px solid #ece6dc; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
+        .count-display { font-size: 3.5rem; font-weight: bold; color: #d88c78; margin: 15px 0; }
+        button { background: #d88c78; color: white; border: none; padding: 10px 20px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="session-box">
+        <h3>Session Page Views Counter</h3>
+        <div class="count-display" id="sessionCount">1</div>
+        <button onclick="incSession()">Simulate Page Refresh ($_SESSION)</button>
+    </div>
+    <script>
+        let views = 1;
+        function incSession() {
+            views++;
+            document.getElementById('sessionCount').innerText = views;
+        }
+    </script>
+</body>
+</html>

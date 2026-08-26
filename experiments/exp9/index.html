@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 20px; background: #faf7f2; color: #23201d; margin: 0; }
+        .search-bar { background: white; padding: 15px; border-radius: 6px; border: 1px solid #ddd; margin-bottom: 15px; }
+        input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 60%; }
+        button { background: #3a5a40; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: 600; }
+        table { width: 100%; border-collapse: collapse; background: white; font-size: 0.85rem; }
+        th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+        th { background: #f0eae1; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <h3>Library Book Search Portal</h3>
+    <div class="search-bar">
+        <input type="text" id="bSearch" placeholder="Search by Book Title..." onkeyup="filterBooks()">
+        <button onclick="filterBooks()">Search</button>
+    </div>
+    <table>
+        <thead>
+            <tr><th>Acc No</th><th>Title</th><th>Authors</th><th>Edition</th><th>Publisher</th></tr>
+        </thead>
+        <tbody id="booksBody">
+            <tr><td>ACC001</td><td>Internet & World Wide Web</td><td>Deitel & Deitel</td><td>5th</td><td>Pearson</td></tr>
+            <tr><td>ACC002</td><td>Programming Perl</td><td>Larry Wall</td><td>4th</td><td>O'Reilly</td></tr>
+            <tr><td>ACC003</td><td>Web Technologies: HTML, JScript, PHP</td><td>A.A. Puntambekar</td><td>2nd</td><td>Technical Pub</td></tr>
+        </tbody>
+    </table>
+    <script>
+        function filterBooks() {
+            const q = document.getElementById('bSearch').value.toLowerCase();
+            const rows = document.querySelectorAll('#booksBody tr');
+            rows.forEach(r => {
+                const title = r.children[1].innerText.toLowerCase();
+                r.style.display = title.includes(q) ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

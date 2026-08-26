@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 20px; background: #faf7f2; color: #23201d; margin: 0; }
+        .form-box { background: white; padding: 15px; border-radius: 6px; border: 1px solid #ddd; margin-bottom: 20px; }
+        input { padding: 8px; margin-right: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #d88c78; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: 600; }
+        table { width: 100%; border-collapse: collapse; background: white; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #f0eae1; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="form-box">
+        <h4>Insert Record into MySQL</h4>
+        <input type="text" id="insName" placeholder="Enter Name">
+        <input type="number" id="insAge" placeholder="Enter Age">
+        <button onclick="addRecord()">Insert Data</button>
+    </div>
+    <h4>Current Database Table (user_records)</h4>
+    <table id="dbTable">
+        <tr><th>ID</th><th>Name</th><th>Age</th></tr>
+        <tr><td>1</td><td>Amjad Khan</td><td>22</td></tr>
+        <tr><td>2</td><td>Neelam Thakur</td><td>21</td></tr>
+    </table>
+    <script>
+        let count = 3;
+        function addRecord() {
+            const n = document.getElementById('insName').value;
+            const a = document.getElementById('insAge').value;
+            if(!n || !a) return alert("Please enter both Name and Age!");
+            const table = document.getElementById('dbTable');
+            const row = table.insertRow();
+            row.innerHTML = "<td>" + (count++) + "</td><td>" + n + "</td><td>" + a + "</td>";
+            document.getElementById('insName').value = '';
+            document.getElementById('insAge').value = '';
+        }
+    </script>
+</body>
+</html>
