@@ -6,7 +6,7 @@
                 quote: "Turning complex data into intelligent, scalable web solutions.",
                 bio: "A versatile engineer bridging the gap between robust web development and intelligent systems. I specialize in building full-stack applications, extracting data-driven insights, and deploying predictive machine learning models to solve real-world problems.",
                 speciality: "End-to-End Web Apps, Predictive Modeling, Data Visualization, Deep Learning, API Integration",
-                photo: "/images/Amjad.jpeg"
+                photo: "../images/Amjad.jpeg"
             },
             "neelam_t": {
                 name: "Neelam Thakur",
@@ -14,7 +14,7 @@
                 quote: "Designing beautiful interfaces, crafting flawless user experiences.",
                 bio: "Passionate designer and developer focused on turning complex ideas into intuitive, pixel-perfect web interfaces. I bridge the gap between aesthetics and clean, modern code.",
                 specialty: "UI/UX Design, Responsive Layouts, Frontend Frameworks, Component Styling",
-                photo: "/images/Neelam thakur.jpeg"
+                photo: "../images/Neelam thakur.jpeg"
             },
             "ayush": {
                 name: "Ayush Kaushik",
@@ -22,7 +22,7 @@
                 quote: "Building tomorrow's solutions with today's data.",
                 bio: "Passionate about turning massive datasets into smart, actionable strategies. Specialised in training high-accuracy machine learning models and deploying production-ready AI pipelines.",
                 speciality: "Machine Learning, Data Engineering, Python Ecosystem, Neural Networks, Data Mining",
-                photo: "/images/Ayush kaushik.jpeg"
+                photo: "../images/Ayush kaushik.jpeg"
             },
             "neelam_k": {
                 name: "Neelam Korram",
@@ -30,7 +30,7 @@
                 quote: "Bringing creative visions to life through clean, modern code.",
                 bio: "Frontend specialist focusing on user-centric design and pixel-perfect styling. Experienced in building accessible, interactive, and highly responsive web layouts that engage users.",
                 specialty: "Advanced Styling, Prototyping, Frontend Architecture, UI Interactions",
-                photo: "/images/Neelam korram.jpeg"
+                photo: "../imagesNeelam korram.jpeg"
             }
         };
 
