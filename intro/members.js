@@ -1,8 +1,8 @@
-// 4 Team Members Database
+// Exact Case-Sensitive Filenames matching explorer
 const membersData = [
     {
         name: "Amjad Khan",
-        tagline: "FULL STACK & BACKEND LEAD",
+        role: "FULL STACK & BACKEND LEAD",
         bio: "7th Semester Computer Science undergraduate at GEC Ambikapur. Specialized in full-stack architecture, XML schemas, and Perl CGI scripting implementations.",
         branch: "BRANCH: CSE",
         sem: "SEMESTER: 7TH",
@@ -11,7 +11,7 @@ const membersData = [
     },
     {
         name: "Neelam Thakur",
-        tagline: "UI/UX & FRONTEND DEVELOPER",
+        role: "UI/UX & FRONTEND DEVELOPER",
         bio: "7th Semester Computer Science undergraduate at GEC Ambikapur. Focused on responsive interface design, CSS grid styling, and interactive client validations.",
         branch: "BRANCH: CSE",
         sem: "SEMESTER: 7TH",
@@ -20,7 +20,7 @@ const membersData = [
     },
     {
         name: "Ayush Kaushik",
-        tagline: "DATABASE & PHP SPECIALIST",
+        role: "DATABASE & PHP SPECIALIST",
         bio: "7th Semester Computer Science undergraduate at GEC Ambikapur. Implementing MySQL persistence layers, PHP session states, and query handling algorithms.",
         branch: "BRANCH: CSE",
         sem: "SEMESTER: 7TH",
@@ -29,7 +29,7 @@ const membersData = [
     },
     {
         name: "Neelam Korram",
-        tagline: "SYSTEMS & TESTING ANALYST",
+        role: "SYSTEMS & TESTING ANALYST",
         bio: "7th Semester Computer Science undergraduate at GEC Ambikapur. Specialized in UNIX shell environment diagnostics, Perl execution workflows, and testing.",
         branch: "BRANCH: CSE",
         sem: "SEMESTER: 7TH",
@@ -38,12 +38,11 @@ const membersData = [
     }
 ];
 
-// Switch Member Profile smoothly
 function switchMember(index) {
     const member = membersData[index];
     if (!member) return;
 
-    // Active pill state
+    // Update active button styling
     const pillButtons = document.querySelectorAll('.pill-btn');
     pillButtons.forEach((btn, i) => {
         btn.classList.toggle('active', i === index);
@@ -52,30 +51,33 @@ function switchMember(index) {
     const topHeroName = document.getElementById('topHeroName');
     const showcase = document.getElementById('memberShowcase');
 
-    if (showcase) {
-        showcase.style.opacity = '0';
-    }
+    if (showcase) showcase.style.opacity = '0';
+    if (topHeroName) topHeroName.style.opacity = '0';
 
     setTimeout(() => {
-        if (topHeroName) topHeroName.innerText = member.name;
+        if (topHeroName) {
+            topHeroName.innerText = member.name;
+            topHeroName.style.opacity = '1';
+        }
         
-        document.getElementById('memberTagline').innerText = member.tagline;
+        // Exact IDs mapped to data properties
+        document.getElementById('memberRole').innerText = member.role;
         document.getElementById('memberName').innerText = member.name;
         document.getElementById('memberBio').innerText = member.bio;
-        document.getElementById('memberBranch').innerText = member.branch;
-        document.getElementById('memberSem').innerText = member.sem;
-        document.getElementById('memberRoll').innerText = member.roll;
+        document.getElementById('badgeBranch').innerText = member.branch;
+        document.getElementById('badgeSem').innerText = member.sem;
+        document.getElementById('badgeRoll').innerText = member.roll;
         
         const photoEl = document.getElementById('memberPhoto');
-        if (photoEl) photoEl.src = member.photo;
-
-        if (showcase) {
-            showcase.style.opacity = '1';
+        if (photoEl) {
+            photoEl.src = member.photo;
         }
+
+        if (showcase) showcase.style.opacity = '1';
     }, 150);
 }
 
-// Initial Load
+// Default run
 window.addEventListener('DOMContentLoaded', () => {
     switchMember(0);
 });
